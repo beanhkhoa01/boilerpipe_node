@@ -43,10 +43,16 @@ Response:
 `{error, ErrorType}`
 
 ErrorType:
-`{not_found, c}` -- When the file is not accessible (you probably need to use filename:absname(Path) before you call this)
+
+`{not_found, c}` 
+
+When the file is not accessible (you probably need to use filename:absname(Path) before you call this)
+
 `{invalid_url, {UrlOrLocalAbsolutePath, ErrorDetail } }` 
+
 `{boilerpipe_exception, {UrlOrLocalAbsolutePath, ErrorDetail } }`
-    ErrorDetail: this is exception message from boilerpipe
+    
+ErrorDetail: this is exception message from boilerpipe
 
 ### Design
 
