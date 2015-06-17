@@ -28,7 +28,7 @@ Combining this with the Language detector library and JInterface was actually qu
 ./build.sh  or mvn package
 
 ### Run
-./run.sh or java -jar target
+./run.sh 
 
 ### API
 
@@ -76,15 +76,7 @@ Result is either
     
 ### Configuration
 
-sname=boilerpipe 
-setcookie=wordreel
-num_processors=10
-processing_server_name=boilerpipe
-language_detector_profile_dir=/opt/dev/java/github/shuyo/language-detection/profiles
-filter_numerical_density=0.1
-language=en
-language_certainity=0.95
-strip_unicode=true
+See https://github.com/Radardisc/boilerpipe_node/config.properties
     
 ### Caveats 
 
