@@ -96,7 +96,7 @@ public class ProcessingRunnable implements Runnable {
 			 if( line == null || line.isEmpty() ){
 				 
 			 } else {
-				 Log.info(line);
+				 Log.debug(line);
 				 builder.append(line);
 				 builder.append("\n");
 			 }
@@ -111,10 +111,12 @@ public class ProcessingRunnable implements Runnable {
 			return null;
 		}
 		
-		String language = Config.getLanguage(); 
+		if( LanguageDetector.isEnabled() ) {
+			String language = Config.getLanguage(); 
 		
-		if(language == null ||  language.isEmpty() || !LanguageDetector.isLanguage(string, language , Config.getLanguageCertainty())){
-			return null;
+			if(language == null ||  language.isEmpty() || !LanguageDetector.isLanguage(string, language , Config.getLanguageCertainty())){
+				return null;
+			}
 		}
 		
 		
@@ -150,7 +152,7 @@ public class ProcessingRunnable implements Runnable {
 		}
 		
 		double density = (double)((double)nums/(len-whiteSpace));
-		Log.info("Nums: %d Whitespace %d: Density: %f", nums, whiteSpace,density);
+		Log.debug("Nums: %d Whitespace %d: Density: %f", nums, whiteSpace,density);
 		return density;
 	}
 

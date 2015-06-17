@@ -9,10 +9,14 @@ import com.cybozu.labs.langdetect.Language;
 
 public class LanguageDetector {
 	
+	private static boolean _enabled=false;
+	public static boolean isEnabled(){  return _enabled; }
+	
 	public static void init(String dir){
 		try {
 			DetectorFactory.loadProfile(dir);
 			Log.info("Detector factory loaded with %d profiles", DetectorFactory.getLangList().size() );
+			_enabled=true;
 		} catch (LangDetectException e) {
 			Log.exception(e, "Exception thrown loading language profiles from dir: %s", dir);
 		}

@@ -12,8 +12,8 @@ public class Log {
 
 	public static Logger _logger;
 	public static void init(){
-		initLog4j();
-		_logger = LoggerFactory.getLogger(Log.class);
+		//initLog4j();
+		_logger = LoggerFactory.getLogger("R");
 		
 	}
 	
@@ -31,8 +31,12 @@ public class Log {
 		_logger.error(String.format(string,args));
 	}
 	
-	public static void initLog4j(){
-			ConsoleAppender console = new ConsoleAppender(); //create appender
+	public static void debug(String string, Object... args) {
+		_logger.debug(String.format(string,args));
+	}
+	
+	private static void initLog4j(){
+		ConsoleAppender console = new ConsoleAppender(); //create appender
 		  //configure the appender
 		  String PATTERN = "%d [%p|%c|%C{1}] %m%n";
 		  console.setLayout(new PatternLayout(PATTERN)); 
@@ -52,6 +56,8 @@ public class Log {
 		  //add appender to any Logger (here is root)
 		  org.apache.log4j.Logger.getRootLogger().addAppender(fa);
 	}
+
+	
 
 	
 	

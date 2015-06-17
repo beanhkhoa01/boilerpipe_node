@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./bin -name boilerpipe_node*.jar | xargs java -DOtpConnection.trace=4 -jar  
+find ./target -name boilerpipe_node*.jar | xargs java -Dlog4j.configuration=file:./log4j.properties $@ -jar  
