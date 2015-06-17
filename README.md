@@ -33,10 +33,13 @@ Combining this with the Language detector library and JInterface was actually qu
 ### API
 
 Parse: 
+
 `{boilerpipe,boilerpipe@hostname}` ! `{ CallingPid, UrlOrLocalAbsolutePath }`
 
 Response:
+
 `{ok, ParseResult}`
+
 `{error, ErrorType}`
 
 ErrorType:
