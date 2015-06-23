@@ -22,6 +22,7 @@ public class ProcessingMailbox {
 	}
 	
 	public void listen(){
+		System.out.println(String.format("Mailbox listening: %s", _mbox.getName()));
 		Log.info("Mailbox listening: %s", _mbox.getName());
 		while(true){
 			try {

@@ -23,6 +23,7 @@ public static void main(String[] args){
 		LanguageDetector.init(Config.getLanguageDetectorProfileDir());
 		Node.start();
 		
+		
 		Runtime.getRuntime().addShutdownHook(new Thread(new ShutdownRunnable()));
 		
 		_mailBox = new ProcessingMailbox(Config.getProcessingServerName());
